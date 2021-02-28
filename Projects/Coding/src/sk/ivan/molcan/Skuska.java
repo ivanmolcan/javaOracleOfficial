@@ -33,8 +33,6 @@ public class Skuska {
                 System.out.println(values[1]);
             case 1:
                 System.out.println(values[0]);
-
-
         }
     }
 

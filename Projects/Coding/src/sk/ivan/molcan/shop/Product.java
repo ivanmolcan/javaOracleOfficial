@@ -10,7 +10,7 @@ import static sk.ivan.molcan.shop.Rating.*;
  * @author Ivan
  */
 
-public class Product {
+public class Product implements Rateable<Product> {
 
     public static final BigDecimal DISCOUNT_RATE = BigDecimal.valueOf(0.1);
     private int id;
@@ -18,14 +18,14 @@ public class Product {
     private BigDecimal price;
     private Rating rating;
 
-    public Product(int id, String name, BigDecimal price, Rating rating) {
+    Product(int id, String name, BigDecimal price, Rating rating) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.rating = rating;
     }
 
-    public Product(int id, String name, BigDecimal price) {
+    Product(int id, String name, BigDecimal price) {
         this(id, name, price, NOT_RATED);
     }
 
