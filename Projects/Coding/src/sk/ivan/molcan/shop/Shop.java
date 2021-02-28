@@ -1,6 +1,7 @@
 package sk.ivan.molcan.shop;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 /**
  * @author Ivan
@@ -10,11 +11,23 @@ public class Shop {
 
     public static void main(String[] args) {
 
-        Product p1 = new Product();
-//        p1.setId(101);
-//        p1.setName("Tea");
-//        p1.setPrice(BigDecimal.valueOf(1.99));
-        System.out.println(p1.getId() + " " + p1.getName() + " " + p1.getPrice() + " " + p1.getDiscount());
+        Product p1 = new Product(101, "Tea", BigDecimal.valueOf(1.99));
+        Product p2 = new Drink(102, "Coffee", BigDecimal.valueOf(1.99), Rating.THREE_STAR);
+        Product p3 = new Food(103, "Cake", BigDecimal.valueOf(1.99), Rating.FIVE_STAR, LocalDate.now().plusDays(2));
+        Product p4 = p3.applyRating(Rating.FOUR_STAR);
+        Product p5 = new Drink(104, "chocolate", BigDecimal.valueOf(2.99), Rating.TWO_STAR);
+        Product p6 = new Food(104, "chocolate", BigDecimal.valueOf(2.99), Rating.TWO_STAR, LocalDate.now().plusDays(2));
+
+
+//        System.out.println(p1.getId() + " " + p1.getName() + " " + p1.getPrice() + " " + p1.getDiscount() + " " + p1.getRating().getStars());
+//        System.out.println(p2.getId() + " " + p2.getName() + " " + p2.getPrice() + " " + p2.getDiscount() + " " + p2.getRating().getStars());
+//        System.out.println(p3.getId() + " " + p3.getName() + " " + p3.getPrice() + " " + p3.getDiscount() + " " + p3.getRating().getStars());
+
+        System.out.println(p1);
+        System.out.println(p2);
+        System.out.println(p3);
+        System.out.println(p4);
+        System.out.println(p5.equals(p6));
 
     }
 
