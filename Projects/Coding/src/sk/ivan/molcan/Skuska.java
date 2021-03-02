@@ -5,6 +5,8 @@ package sk.ivan.molcan;
  */
 
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class Skuska {
 
@@ -43,7 +45,19 @@ public class Skuska {
 //        script();
 //        builder();
 //        timeFun();
-        setFiscal(1, 2, 3);
+//        setFiscal(1, 2, 3);
 
+        String[] names = {"Mary","Jane","Elizabeth","Jo"};
+        Arrays.sort(names, new Compare());
+        for (String name: names) {
+            System.out.println(name);
+        }
+
+    }
+}
+
+class Compare implements Comparator<String> {
+    public int compare(String s1, String s2) {
+        return s2.length() - s1.length();
     }
 }
