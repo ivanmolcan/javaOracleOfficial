@@ -34,6 +34,8 @@ public class Shop {
         System.out.println(p4);
         System.out.println(p5.equals(p6));
 
+        pm.printProductReport(p1);
+
     }
 }
 

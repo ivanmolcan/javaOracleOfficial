@@ -1,6 +1,6 @@
 package sk.ivan.molcan.shop;
 
-public class Review {
+public class Review implements Comparable<Review>{
 
     private Rating rating;
     private String comments;
@@ -16,6 +16,11 @@ public class Review {
 
     public String getComments() {
         return comments;
+    }
+
+    @Override
+    public int compareTo(Review other) {
+        return other.rating.ordinal() - this.rating.ordinal();
     }
 
     @Override
