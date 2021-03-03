@@ -2,6 +2,7 @@ package sk.ivan.molcan.shop;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.Locale;
 
 /**
@@ -35,6 +36,12 @@ public class Shop {
         System.out.println(p5.equals(p6));
 
         pm.printProductReport(p1);
+
+        Comparator<Product> ratingSorter = (p7,p8) -> p8.getRating().ordinal() - p7.getRating().ordinal();
+        Comparator<Product> priceSorter = (p7,p8) -> p8.getPrice().compareTo(p7.getPrice());
+//        pm.printProducts((p7,p8) -> p8.getRating().ordinal() - p7.getRating().ordinal());
+        pm.printProducts(ratingSorter.thenComparing(priceSorter));
+        pm.printProducts(ratingSorter.thenComparing(priceSorter).reversed());
 
     }
 }
