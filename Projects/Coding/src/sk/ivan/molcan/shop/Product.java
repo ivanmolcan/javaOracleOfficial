@@ -1,5 +1,6 @@
 package sk.ivan.molcan.shop;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Objects;
@@ -10,7 +11,7 @@ import static sk.ivan.molcan.shop.Rating.*;
  * @author Ivan
  */
 
-public class Product implements Rateable<Product> {
+public class Product implements Rateable<Product>, Serializable {
 
     public static final BigDecimal DISCOUNT_RATE = BigDecimal.valueOf(0.1);
     private int id;

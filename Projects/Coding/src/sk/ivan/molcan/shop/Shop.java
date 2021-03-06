@@ -37,13 +37,16 @@ public class Shop {
 
         pm.printProductReport(p1);
 
+        pm.dumpData();
+        pm.restoreData();
+
         Comparator<Product> ratingSorter = (p -> p.getPrice().floatValue() < 2,
         (p7, p8) -> p8.getRating().ordinal() - p7.getRating().ordinal());
 
-        pm.getDiscounts().forEach((rating, discount) -> System.out.println(rating +"\t" + discount));
+        pm.getDiscounts().forEach((rating, discount) -> System.out.println(rating + "\t" + discount));
 
         Comparator<Product> priceSorter = (p7, p8) -> p8.getPrice().compareTo(p7.getPrice());
-        pm.printProducts((p7,p8) -> p8.getRating().ordinal() - p7.getRating().ordinal());
+        pm.printProducts((p7, p8) -> p8.getRating().ordinal() - p7.getRating().ordinal());
 //        pm.printProducts(ratingSorter.thenComparing(priceSorter));
 //        pm.printProducts(ratingSorter.thenComparing(priceSorter).reversed());
 
